@@ -1,0 +1,74 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  --color-campo-50: #f2f8f1;
+  --color-campo-100: #e2f0e0;
+  --color-campo-500: #2f9e44;
+  --color-campo-700: #1b6b32;
+  --color-campo-900: #14532d;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #f5f7f4;
+  color: #1a2418;
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior-y: none;
+}
+
+/* Barra inferior sin chocar con la notch / barra del navegador */
+.safe-bottom {
+  padding-bottom: calc(0.5rem + env(safe-area-inset-bottom, 0px));
+}
+
+.scroll-fino::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.scroll-fino::-webkit-scrollbar-thumb {
+  background: #cbd5c8;
+  border-radius: 999px;
+}
+
+/* Micro-animaciones discretas para la confirmacion del asistente */
+@keyframes sube {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.sube {
+  animation: sube 0.22s ease-out both;
+}
+
+@keyframes latido {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.45;
+  }
+}
+.latido {
+  animation: latido 1.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sube,
+  .latido {
+    animation: none;
+  }
+}
