@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="docs/icons/icon-192.png" alt="AgroMatch" width="96" />
+<img src="docs/icons/logo.png" alt="Logo de AgroMatch" width="140" />
 
 # AgroMatch
 
