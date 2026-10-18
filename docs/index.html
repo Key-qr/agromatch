@@ -40,7 +40,8 @@ body{background:radial-gradient(circle at 20% 10%,#e3f1e6,#d3e6d9 60%,#c6ddd0)}
 .gbtn.p{background:var(--green);color:#fff;border-color:var(--green)}.gbtn.d{color:var(--red);border-color:#e6b9b6}
 .tools{display:flex;gap:.4rem;flex-wrap:wrap;margin:.2rem 0 .8rem}
 .hint{font-size:.72rem;color:var(--muted);margin-top:.6rem}
-/* Teléfono */
+/* Teléfono (solo en escritorio: en el celular la app ocupa la pantalla completa) */
+@media (min-width:900px){
 .phone-wrap{position:relative;flex:0 0 auto}
 .phone{position:absolute;left:0;top:0;width:446px;height:948px;transform-origin:0 0;transform:scale(var(--s,1));background:#101a14;border-radius:64px;padding:8px;box-shadow:0 30px 70px rgba(9,83,50,.35),inset 0 0 0 2px #2b3a31}
 .screen{position:relative;width:430px;height:932px;border-radius:56px;overflow:hidden;background:var(--light);transform:translateZ(0)}
@@ -51,7 +52,13 @@ body{background:radial-gradient(circle at 20% 10%,#e3f1e6,#d3e6d9 60%,#c6ddd0)}
 .screen .nav{position:fixed;bottom:0;left:0;transform:none;max-width:none;width:100%;padding-bottom:22px}
 .screen .welcome{padding-top:60px}
 .screen .toast{bottom:100px}
-@media (max-width:899px){.guide,.phone-wrap .phone{display:none}.phone-wrap{display:contents}}
+}
+@media (max-width:899px){
+body{background:var(--light)}
+.demo{display:block;height:100%}
+.guide,.island{display:none}
+.phone-wrap,.phone,.screen,.scroll{display:contents}
+}
 </style>
 </head>
 <body>
